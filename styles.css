@@ -1,0 +1,111 @@
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+
+/* Logo and Company Name */
+.header-container {
+    text-align: center;
+    background-color: #120323;
+    color:#97bf04;
+}
+
+/* Puffin Image */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Sidebar */
+aside {
+    background-color: #97bf04;
+    padding: 15px;
+    text-align: center;
+    width: 100%;
+}
+
+footer {
+    background-color:#d9043d;
+    color:white;
+}
+
+/* --- Responsive Design --- */
+
+/* For devices < 768px */
+@media (max-width: 767px) {
+    .header-container h1 {
+        display: block; /* Ensures logo and name are stacked */
+    }
+    main img {
+        width: 100%; /* Default full width for small screens */
+        border: 6px solid #d9043d; /* Add red frame */
+    }
+}
+
+/* For devices < 1000px but ≥ 768px */
+@media (min-width: 768px) and (max-width: 999px) {
+    .header-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .header-container h1 {
+        margin-left: 10px;
+    }
+    main {
+        flex-direction: row; /* Image and caption side by side */
+        justify-content: space-around;
+    }
+    main img {
+        width: 300px; /* Limit width */
+        border:6px solid #d9043d; /* Ensure frame stays */
+    }
+    aside {
+        width: 100%;
+        order: 2; /* Ensure it appears at the bottom */
+    }
+}
+
+/* For devices ≥ 1000px */
+@media (min-width: 1000px) {
+    main {
+        display: grid;
+        grid-template-columns: 2fr 2fr 1fr; /* Content takes more space, sidebar is smaller */
+        gap: 20px; /* Space between columns */
+        align-items: start;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .header-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .header-container h1 {
+        margin-left: 10px;
+    }
+    aside {
+        width: 100%; /* Ensure it fills the column */
+        height: auto;
+        background-color: #97bf04;
+        padding: 15px;
+    }
+}
