@@ -1,10 +1,5 @@
 body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
-/* General Styles */
-body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -44,18 +39,40 @@ aside {
 footer {
     background-color:#d9043d;
     color:white;
+    padding: 8px;
+    text-align: center;
 }
-
-/* --- Responsive Design --- */
 
 /* For devices < 768px */
 @media (max-width: 767px) {
     .header-container h1 {
-        display: block; /* Ensures logo and name are stacked */
+        display: block;
+        width: 100%;
+        margin: 0;
     }
+
+    .header-container {
+        width: 100%;
+        margin: 0;
+    }
+
     main img {
-        width: 100%; /* Default full width for small screens */
-        border: 6px solid #d9043d; /* Add red frame */
+        width: 100%;
+        border: 6px solid #d9043d;
+        margin: 0;
+    }
+
+    aside {
+        width: 100%;
+        margin: 0;
+    }
+
+    footer {
+        width: 100%;
+        margin: 0;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        margin-top: 25px;
     }
 }
 
@@ -65,47 +82,95 @@ footer {
         display: flex;
         justify-content: center;
         align-items: center;
+        width: 100%;
+        padding: 10px;
     }
     .header-container h1 {
         margin-left: 10px;
     }
-    main {
-        flex-direction: row; /* Image and caption side by side */
-        justify-content: space-around;
-    }
-    main img {
-        width: 300px; /* Limit width */
-        border:6px solid #d9043d; /* Ensure frame stays */
-    }
+
     aside {
         width: 100%;
-        order: 2; /* Ensure it appears at the bottom */
+        max-width: none;
+        margin-bottom: 25px;
     }
+
+    footer {
+        width: 100%;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        margin-top: 25px;
+    }
+
+    figure {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        max-width: 100%;
+    }
+    
+    figure img {
+        max-width: 35%;
+        height: auto;
+        border: 6px solid #d9043d;
+    }
+    
+    figcaption {
+        flex: 1;
+        text-align: left;
+    }
+
 }
 
 /* For devices ≥ 1000px */
 @media (min-width: 1000px) {
-    main {
+    #container {
         display: grid;
-        grid-template-columns: 2fr 2fr 1fr; /* Content takes more space, sidebar is smaller */
-        gap: 20px; /* Space between columns */
-        align-items: start;
-        display: flex;
-        flex-direction: column;
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: auto auto;
     }
 
     .header-container {
         display: flex;
         justify-content: center;
         align-items: center;
+        width: 100%;
     }
     .header-container h1 {
         margin-left: 10px;
     }
+
+    figure {
+        display: flex;
+        gap: 20px;
+        align-items: start;
+        grid-column: span 2;
+    }
+
+    main img {
+        border: 10px solid #d9043d;
+        max-width: 300px;
+    }
+
     aside {
-        width: 100%; /* Ensure it fills the column */
-        height: auto;
-        background-color: #97bf04;
-        padding: 15px;
+        background-color: #a0c020;
+
+        margin-top: 25px;
+        margin-bottom: 25px;
+        width: 100%;
+    }
+
+    aside p, h3 {
+        margin-right: 20px;
+    }
+
+    footer {
+        grid-column: span 3;
+        background-color: #d9043d;
+        color: white;
+        text-align: center;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        width: 100%;
     }
 }
