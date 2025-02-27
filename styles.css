@@ -57,7 +57,7 @@ footer {
     }
 
     main img {
-        width: 100%;
+        max-width: 300px;
         border: 6px solid #d9043d;
         margin: 0;
     }
